@@ -1,3 +1,4 @@
+import Adapters.AdapterRedeSocial;
 import java.util.Scanner;
 
 public class Main {
@@ -8,15 +9,14 @@ public class Main {
         String rede = leitor.nextLine();
 
         // Interface responsavel para postar o conteudo independente da rede social
-        AdapterMidiaSocial adapter = SocialMediaFactory.criarAdapter(rede);
+        AdapterRedeSocial adapter = RedeSocialFactory.criarAdapter(rede);
 
         if(adapter != null){
             System.out.print("Digite o conteúdo da publicação: ");
             String texto = leitor.nextLine();
 
-            Conteudo conteudo = new Conteudo(texto);
-            GerenciadorMidiaSocial gerenciador = new GerenciadorMidiaSocial(adapter);
-            gerenciador.publicar(conteudo);
+            GerenciadorRedeSocial gerenciador = new GerenciadorRedeSocial(adapter);
+            gerenciador.publicar(texto);
         }
 
         leitor.close();
