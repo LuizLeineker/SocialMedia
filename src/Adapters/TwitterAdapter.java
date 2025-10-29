@@ -1,4 +1,4 @@
-parece qpackage Adapters;
+package Adapters;
 
 import SocialMediaAPIs.TwitterAPI;
 
